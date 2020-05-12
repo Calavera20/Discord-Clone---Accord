@@ -1,0 +1,47 @@
+.UserIcon {
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: blanchedalmond;
+  min-height: 5.5vh;
+  min-width: 5.5vh;
+
+  position: relative;
+}
+
+.UserStatusIcon {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  background-color: greenyellow;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.VerticalAlign {
+  min-height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.UserInfo {
+  display: inline;
+  padding-left: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.Username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.UserActivity {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #6b717e;
+}

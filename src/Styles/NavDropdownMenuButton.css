@@ -1,0 +1,28 @@
+.Nav_DropdownButton {
+  height: 100%;
+  align-items: right;
+}
+
+.Dropdown_Menu {
+  background-color: #32292f;
+  height: 100%;
+}
+
+.dropdown-menu {
+  background-color: #473e44;
+  border: black solid;
+}
+
+.btn:hover {
+  background-color: #5e525a;
+  border: black solid 1px;
+}
+.btn:active {
+  background-color: #5e525a;
+  border: black solid 1px;
+}
+
+.btn {
+  background-color: #32292f;
+  color: #f7f0f5;
+}

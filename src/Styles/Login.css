@@ -1,0 +1,30 @@
+.Logo_Login {
+  height: 20vh;
+}
+
+.Logo_Input_Box {
+  height: 60vh;
+
+  background-color: #e0ddcf;
+  border-radius: 3%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.Login_Page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 0 0 0;
+  background: url("../backgroundlogin.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.Logo_Login > img {
+  height: 100%;
+}
+
+.Logo_Footbar_Info {
+  color: #d7f9ff;
+  height: 15vh;
+  padding-bottom: 5vh;
+  vertical-align: bottom;
+}

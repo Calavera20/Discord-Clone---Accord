@@ -28,3 +28,7 @@
   padding-bottom: 5vh;
   vertical-align: bottom;
 }
+
+.Login_Divider {
+  border-top: 1px solid #6b717e;
+}

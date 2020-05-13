@@ -1,28 +1,31 @@
-var app = new (require("express"))();
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-var pg = require("pg");
+require("dotenv").config();
 
-var conString =
-  "postgres://wqveieli:mvEacuIGcuuUi43j2WBBrKEM0m_Dd2-a@balarama.db.elephantsql.com:5432/wqveieli"; //Can be found in the Details page
-var client = new pg.Client(conString);
+const app = express();
+const port = process.env.PORT || 5000;
 
-client.connect(function (err) {
-  if (err) {
-    return console.error("could not connect to postgres", err);
-  }
-  const query = {
-    text: "INSERT INTO users(login, password, status) VALUES($1, $2, $3)",
-    values: ["test3", "haslo", "offline"],
-  };
+app.use(cors());
+app.use(express.json());
 
-  client.query(query, (err, res) => {
-    if (err) {
-      return console.error("error running query", err);
-    } else {
-      console.log(res.rows[0]);
-    }
-    // console.log(result.rows[0].result);
-    // >> output: 2018-08-23T14:02:57.117Z
-    client.end();
-  });
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
+const connection = mongoose.connection;
+
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully");
+});
+
+const usersRouter = require("./routes/users");
+
+app.use("/users", usersRouter);
+
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`);
 });

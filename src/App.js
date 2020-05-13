@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./Components/Main";
 import "./Styles/App.css";
 import Login from "./Components/Login";
+import AuthenticationPage from "./Components/AuthenticationPage";
+import Register from "./Components/Register";
 
 function App() {
   return (
@@ -14,7 +16,14 @@ function App() {
             <Main />
           </Route>
           <Route exact path="/login">
-            <Login />
+            <AuthenticationPage>
+              <Login />
+            </AuthenticationPage>
+          </Route>
+          <Route exact path="/register">
+            <AuthenticationPage>
+              <Register />
+            </AuthenticationPage>
           </Route>
         </Switch>
       </div>

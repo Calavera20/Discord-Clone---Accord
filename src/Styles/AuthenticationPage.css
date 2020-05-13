@@ -1,0 +1,30 @@
+.Authentication_Login {
+  height: 20vh;
+}
+
+.Authentication_Input_Box {
+  height: 60vh;
+
+  background-color: #32292f;
+  color: white;
+  border-radius: 3%;
+}
+
+.Authentication_Page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 0 0 0;
+  background: url("../backgroundlogin.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.Logo_Authentication > img {
+  height: 100%;
+}
+
+.Authentication_Footbar_Info {
+  color: #d7f9ff;
+  height: 10vh;
+  padding-bottom: 5vh;
+  vertical-align: bottom;
+}

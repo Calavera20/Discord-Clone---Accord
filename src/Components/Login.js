@@ -1,34 +1,44 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../Styles/Login.css";
 
 function Login() {
   return (
-    <Container fluid className="Login_Page ">
-      <Row className="text-center">
-        <Col>
-          <img
-            src={require("../AccordLogo.png")}
-            class="img-fluid Logo"
-            alt="LOGO"
-            style={{ height: "100%" }}
-          ></img>
-        </Col>
-      </Row>
-      <Row>
-        <Col></Col>
-        <Col xs={4} className="Logo_Input_Box z-depth-5">
-          elo
-        </Col>
-        <Col></Col>
-      </Row>
-      <Row>
-        <Col className="Logo_Footbar_Info text-center">
-          About <br />
-          Mickiewicz to ... <br />
-          All rights reserved by ,,w,,Container,afw
-        </Col>
-      </Row>
+    <Container className="Login_Container">
+      <Form>
+        <div class="form-group">
+          <label for="InputLogin">Login</label>
+          <input
+            type="login"
+            class="form-control"
+            id="InputLogin"
+            placeholder="Enter login"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="InputPassword">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="InputPassword"
+            placeholder="Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Log in!
+        </button>
+      </Form>
+      <hr className="Login_Divider " />
+      Not registered yet?{" "}
+      <Link
+        to={{
+          pathname: "/register",
+        }}
+      >
+        Sign up here.
+      </Link>
     </Container>
   );
 }

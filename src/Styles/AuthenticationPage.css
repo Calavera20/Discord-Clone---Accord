@@ -25,6 +25,7 @@
 .Authentication_Footbar_Info {
   color: #d7f9ff;
   height: 10vh;
-  padding-bottom: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 3vh;
   vertical-align: bottom;
 }

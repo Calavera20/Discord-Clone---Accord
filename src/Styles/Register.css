@@ -1,0 +1,62 @@
+.Register_Container {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.Form_Input {
+  padding-left: 6px;
+}
+
+label {
+  text-align: left;
+  float: left;
+  width: 80%;
+  padding-left: 10%;
+  margin-bottom: 0.5vh;
+}
+input {
+  width: 80%;
+}
+
+p {
+  position: absolute;
+  bottom: 0;
+  font-size: x-small;
+  margin: 0;
+  padding: 0;
+  left: 10%;
+  color: rgb(223, 0, 0);
+}
+
+.Register_Submit {
+  margin-top: 2vh;
+  height: 6vh;
+}
+
+.Register_Nameplate {
+  margin-top: 2vh;
+  padding: 4vh;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.Register_Login {
+  position: relative;
+  padding-bottom: 2vh;
+}
+
+.Register_Password {
+  position: relative;
+  padding-bottom: 2vh;
+}
+
+.Register_Confirmation {
+  position: relative;
+  padding-bottom: 2vh;
+}
+
+hr {
+  width: 86%;
+  border-top: 1px solid white;
+}

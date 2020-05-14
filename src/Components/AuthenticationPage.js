@@ -3,6 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import "../Styles/AuthenticationPage.css";
 
+//TODO: change column proportions for smaller viewports so it works for mobile version
+
 function AuthenticationPage(props) {
   return (
     <Container fluid className="Authentication_Page ">
@@ -10,7 +12,7 @@ function AuthenticationPage(props) {
         <Col>
           <img
             src={require("../AccordLogo.png")}
-            class="img-fluid Logo"
+            className="img-fluid Logo"
             alt="LOGO"
             style={{ height: "100%" }}
           ></img>

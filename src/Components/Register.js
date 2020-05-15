@@ -3,13 +3,21 @@ import { Container } from "react-bootstrap";
 import "../Styles/Register.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useState } from "react";
+import RegisterSuccess from "./RegisterSuccess";
+import { useHistory } from "react-router-dom";
 
 function Register() {
   const { register, watch, handleSubmit, errors } = useForm({
     mode: "onSubmit",
     reValidateMode: "onChange",
   });
+
+  const history = useHistory();
+  const [didSucceed, setSucceed] = useState(false);
+
   //TODO: add check if user with that name already exists in DB
+
   const onSubmit = (data, e) => {
     const newUser = {
       login: data.login,
@@ -18,16 +26,23 @@ function Register() {
     console.log(newUser);
 
     axios.post("http://localhost:5000/users/add", newUser).then((res) => {
-      //you can set state here for success - if true display popup and send to login page
       console.log(res.data);
       e.target.reset();
+      setSucceed(true);
+      setTimeout(() => {
+        history.push("/login");
+      }, 3000);
     });
+    //TODO: Specific message on caught error from server
   };
 
   return (
     <Container className="Register_Container">
+      {didSucceed && <RegisterSuccess />}
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="Register_Nameplate">Register new account</div>
+
         <div className="Register_Login">
           <label>Login</label>
           <input
@@ -47,6 +62,7 @@ function Register() {
             <p>Login can only be 22 characters long</p>
           )}
         </div>
+
         <div className="Register_Password">
           <label>Password</label>
           <input
@@ -64,6 +80,7 @@ function Register() {
             <p>Password has to be at least 8 characters long</p>
           )}
         </div>
+
         <div className="Register_Confirmation">
           <label>Confirm Password</label>
           <input

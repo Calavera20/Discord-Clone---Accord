@@ -1,0 +1,19 @@
+.Register_Success {
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: saddlebrown;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  padding: 3vh;
+  width: 28vw;
+  height: 31vh;
+  border-radius: 5px;
+  font-size: x-large;
+}
+
+.Register_Success-Information {
+  margin-bottom: 4vh;
+}

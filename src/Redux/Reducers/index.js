@@ -1,11 +1,8 @@
-import registrationStatusReducer from "./registrationStatus";
-import loggedReducer from "./isLogged";
 import { combineReducers } from "redux";
-import registStatusReducer from "./registrationStatus";
+import loginStatusReducer from "./loginReducer";
 
 const allReducers = combineReducers({
-  registrationStatus: registrationStatusReducer,
-  isLogged: loggedReducer,
+  loginStatus: loginStatusReducer,
 });
 
 export default allReducers;

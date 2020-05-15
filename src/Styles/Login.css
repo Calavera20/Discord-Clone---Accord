@@ -1,34 +1,53 @@
-.Logo_Login {
-  height: 20vh;
+.Login_Container {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.Logo_Input_Box {
-  height: 60vh;
-
-  background-color: #e0ddcf;
-  border-radius: 3%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+.Form_Input {
+  padding-left: 6px;
 }
 
-.Login_Page {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 0 0 0;
-  background: url("../backgroundlogin.jpg") no-repeat center;
-  background-size: cover;
+label {
+  text-align: left;
+  float: left;
+  width: 80%;
+  padding-left: 10%;
+  margin-bottom: 0.5vh;
+}
+input {
+  width: 80%;
 }
 
-.Logo_Login > img {
-  height: 100%;
+p {
+  position: absolute;
+  bottom: 0;
+  font-size: x-small;
+  margin: 0;
+  padding: 0;
+  left: 10%;
+  color: rgb(223, 0, 0);
 }
 
-.Logo_Footbar_Info {
-  color: #d7f9ff;
-  height: 15vh;
-  padding-bottom: 5vh;
-  vertical-align: bottom;
+.Login_Submit {
+  margin-top: 4vh;
+  height: 4vh;
+  margin-bottom: 4vh;
 }
 
-.Login_Divider {
-  border-top: 1px solid #6b717e;
+.Login_Nameplate {
+  margin-top: 2vh;
+  padding: 4vh;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.Login_Box {
+  position: relative;
+  padding-bottom: 3vh;
+}
+
+.Login_Password {
+  position: relative;
+  padding-bottom: 2vh;
 }

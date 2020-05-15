@@ -30,23 +30,23 @@ router.route("/authenticate").post((req, res) => {
   const usernameToFind = req.body.login;
   const passwordToHash = req.body.password;
 
-  User.find({ username: { usernameToFind } })
+  const query = { username: usernameToFind };
+  const userToAuthenticate = {};
+
+  User.findOne(query)
     .then((userToAuthenticate) => {
-      console.log(userToAuthenticate);
+      bcrypt.compare(passwordToHash, userToAuthenticate.password, function (
+        err,
+        result
+      ) {
+        if (result) {
+          return res.json("Authentication Successful");
+        } else {
+          return res.status(401).json("Error: " + err);
+        }
+      });
     })
     .catch((err) => res.status(400).json("Error: " + err));
-
-  userToAuthenticate.find(User);
-  /*
-  bcrypt.compare("somePassword", hash, function (err, res) {
-    if (res) {
-      // Passwords match
-    } else {
-      // Passwords don't match
-    }
-  });
-
- */
 });
 
 /*

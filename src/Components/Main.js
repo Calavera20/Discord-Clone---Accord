@@ -5,8 +5,23 @@ import ServerList from "./ServerList";
 import UserList from "./UserList";
 import Chat from "./Chat";
 import "../Styles/Main.css";
+import { fetchUsers } from "../Redux/Actions/index";
+import { useEffect } from "react";
+import { connect, useSelector } from "react-redux";
 
-function Main() {
+function Main(props) {
+  const users = useSelector((state) => state.fetchUsersReducer.usersArray);
+
+  const currentUser = {};
+
+  useEffect(() => {
+    props.fetchUsers();
+  }, []);
+
+  useEffect(() => {
+    console.log(users);
+  });
+
   return (
     <Container className="Main" fluid>
       <Nav />
@@ -16,10 +31,10 @@ function Main() {
 
         <Chat />
 
-        <UserList />
+        <UserList allUsers={users} />
       </Row>
     </Container>
   );
 }
 
-export default Main;
+export default connect(null, { fetchUsers })(Main);

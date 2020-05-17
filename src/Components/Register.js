@@ -33,7 +33,7 @@ function Register() {
         history.push("/login");
       }, 3000);
     });
-    //TODO: Specific message on caught error from server
+    //TODO: catch errors and set specific message on caught error from server
   };
 
   return (

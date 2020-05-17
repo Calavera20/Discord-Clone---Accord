@@ -1,41 +1,41 @@
 import {
-  LOGIN_FAILURE,
-  LOGIN_IN_PROGRESS,
-  LOGIN_SUCCESS,
+  FETCH_FAILURE,
+  FETCH_IN_PROGRESS,
+  FETCH_SUCCESS,
 } from "../Actions/types";
 
 const initialState = {
   inProgress: false,
-  isLoggedIn: false,
+  usersArray: [],
   error: null,
-  username: null,
 };
 
-const loginReducer = (state = initialState, action) => {
+const fetchUsersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case FETCH_SUCCESS:
       return {
         ...state,
         inProgress: false,
+        usersArray: action.payload.users,
         error: null,
-        isLoggedIn: true,
-        username: action.payload.username,
       };
-    case LOGIN_FAILURE:
+    case FETCH_FAILURE:
       return {
         ...state,
         inProgress: false,
+        usersArray: [],
         error: action.payload.error,
-        isLoggedIn: false,
       };
-    case LOGIN_IN_PROGRESS:
+    case FETCH_IN_PROGRESS:
       return {
         ...state,
         inProgress: true,
+        usersArray: [],
+        error: null,
       };
     default:
       return state;
   }
 };
 
-export default loginReducer;
+export default fetchUsersReducer;

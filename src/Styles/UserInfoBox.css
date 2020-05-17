@@ -3,5 +3,74 @@
   margin: 3%;
   margin-left: 5%;
   height: 6vh;
-  background-color: honeydew;
+  color: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.User_Icon {
+  border: 1px solid black;
+  border-radius: 50%;
+
+  min-height: 5.5vh;
+  min-width: 5.5vh;
+
+  position: relative;
+}
+
+.Username_Status {
+  display: inline;
+  padding-left: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.User_List_Name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.User_List_Activity {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #6b717e;
+  font-size: small;
+}
+
+.UserStatusIcon_Active {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  background-color: greenyellow;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.UserStatusIcon_Busy {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  background-color: orange;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.UserStatusIcon_Offline {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  background-color: gray;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

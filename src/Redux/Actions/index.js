@@ -1,4 +1,11 @@
-import { LOGIN_FAILURE, LOGIN_IN_PROGRESS, LOGIN_SUCCESS } from "./types";
+import {
+  LOGIN_FAILURE,
+  LOGIN_IN_PROGRESS,
+  LOGIN_SUCCESS,
+  FETCH_FAILURE,
+  FETCH_IN_PROGRESS,
+  FETCH_SUCCESS,
+} from "./types";
 
 import axios from "axios";
 
@@ -15,7 +22,8 @@ export const authUser = ({ login, password }) => {
       .then((res) => {
         console.log(res.data);
 
-        dispatch(logInSuccessful());
+        dispatch(logInSuccessful(login));
+        //TODO: set user status active
       })
       .catch((err) => {
         dispatch(logInFailed(err.message));
@@ -23,9 +31,10 @@ export const authUser = ({ login, password }) => {
   };
 };
 
-export const logInSuccessful = () => {
+export const logInSuccessful = (username) => {
   return {
     type: LOGIN_SUCCESS,
+    payload: { username },
   };
 };
 
@@ -38,6 +47,43 @@ export const logInProgress = () => {
 export const logInFailed = (error) => {
   return {
     type: LOGIN_FAILURE,
+    payload: { error },
+  };
+};
+
+export const fetchUsers = () => {
+  return (dispatch) => {
+    dispatch(fetchUsersInProgress());
+
+    axios
+      .get("http://localhost:5000/users")
+      .then((res) => {
+        console.log(res.data);
+
+        dispatch(fetchUsersSuccess(res.data));
+      })
+      .catch((err) => {
+        dispatch(fetchUsersFailed(err.message));
+      });
+  };
+};
+
+export const fetchUsersSuccess = (users) => {
+  return {
+    type: FETCH_SUCCESS,
+    payload: { users },
+  };
+};
+
+export const fetchUsersInProgress = () => {
+  return {
+    type: FETCH_IN_PROGRESS,
+  };
+};
+
+export const fetchUsersFailed = (error) => {
+  return {
+    type: FETCH_FAILURE,
     payload: { error },
   };
 };

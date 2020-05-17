@@ -1,16 +1,26 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../Styles/Login.css";
 import { useForm } from "react-hook-form";
 import { connect, useSelector } from "react-redux";
 import { authUser } from "../Redux/Actions/index";
+
+//TODO: Login in progress notification
 
 function Login(props) {
   const { register, handleSubmit, errors } = useForm({
     mode: "onSubmit",
     reValidateMode: "onChange",
   });
+
+  const history = useHistory();
+  const stan = useSelector((state) => state.loginStatus);
+  if (stan.isLoggedIn) {
+    setTimeout(() => {
+      history.push("/");
+    }, 3000);
+  }
 
   const authenticateUser = (data, e) => {
     e.preventDefault();

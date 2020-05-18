@@ -9,7 +9,7 @@ function UserInfoBox(props) {
 
       <div
         className="User_Icon"
-        style={{ backgroundImage: `url(${props.userInfo.icon})` }}
+        style={{ backgroundImage: `url(${props.userInfo.image})` }}
       >
         <div className="UserStatusIcon_Active"></div>
         {props.userInfo.status === "active" && (

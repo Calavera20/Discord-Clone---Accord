@@ -5,11 +5,12 @@ import NavDropdownMenu from "./NavDropdownMenuButton";
 import NavLogo from "./NavLogo";
 import "../Styles/Nav.css";
 
-function Nav() {
+function Nav(props) {
+  console.log(props.currentUser);
   return (
     <Row className="Nav_Row">
       <Col xs={4}>
-        <NavUserInfo />
+        <NavUserInfo currentUser={props.currentUser} />
       </Col>
       <Col className="Nav_Logo text-center" xs={4}>
         <NavLogo />

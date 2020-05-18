@@ -23,10 +23,8 @@ function Register() {
       login: data.login,
       password: data.password,
     };
-    console.log(newUser);
 
     axios.post("http://localhost:5000/users/add", newUser).then((res) => {
-      console.log(res.data);
       e.target.reset();
       setSucceed(true);
       setTimeout(() => {

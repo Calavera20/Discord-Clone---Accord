@@ -11,20 +11,30 @@ import { connect, useSelector } from "react-redux";
 
 function Main(props) {
   const users = useSelector((state) => state.fetchUsersReducer.usersArray);
+  const currentUsername = useSelector((state) => state.loginStatus.username);
 
-  const currentUser = {};
+  let currentUser = {};
+
+  const returnCurrentUser = (Users) => {
+    for (let i = 0; i < Users.length; i++) {
+      if (Users[i].username === currentUsername) {
+        return Users[i];
+      }
+    }
+  };
 
   useEffect(() => {
     props.fetchUsers();
   }, []);
 
   useEffect(() => {
-    console.log(users);
+    currentUser = returnCurrentUser(users);
+    console.log(currentUser);
   });
 
   return (
     <Container className="Main" fluid>
-      <Nav />
+      <Nav currentUser={currentUser} />
 
       <Row className="Main_Content_Row">
         <ServerList />

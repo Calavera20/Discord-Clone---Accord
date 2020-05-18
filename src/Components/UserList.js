@@ -9,7 +9,7 @@ function UserList(props) {
 
   //TODO sort user list by active > busy > offline,
   const usersToRender = usersArray.map((userInfo) => {
-    return <UserInfoBox userInfo={userInfo} />;
+    return <UserInfoBox userInfo={userInfo} key={userInfo._id} />;
   });
 
   return (

@@ -12,7 +12,8 @@
 .User_Icon {
   border: 1px solid black;
   border-radius: 50%;
-
+  background-size: contain;
+  background-repeat: no-repeat;
   min-height: 5.5vh;
   min-width: 5.5vh;
 

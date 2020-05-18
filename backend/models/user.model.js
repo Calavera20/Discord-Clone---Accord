@@ -13,7 +13,7 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   status: { type: String },
   activity: { type: String },
-  image: Buffer,
+  image: { type: String },
 });
 
 const User = mongoose.model("User", userSchema);

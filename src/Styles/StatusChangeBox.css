@@ -1,0 +1,45 @@
+.Change_Box {
+  border-radius: 3%;
+  z-index: 10;
+  position: absolute;
+  background-color: peru;
+  top: 2vh;
+  font-size: x-small;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline;
+}
+
+.Status_Icon_Active {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 1.4vh;
+  width: 1.4vh;
+  background-color: greenyellow;
+  display: inline-block;
+}
+
+.Status_Icon_Busy {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 1.4vh;
+  width: 1.4vh;
+  background-color: rgb(255, 234, 47);
+  display: inline-block;
+}
+
+.Status_Icon_Offline {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 1.4vh;
+  width: 1.4vh;
+  background-color: rgb(59, 59, 59);
+  display: inline-block;
+}
+
+.Inline {
+  display: inline-block;
+}
+.Option {
+  padding: 0.3vh;
+}

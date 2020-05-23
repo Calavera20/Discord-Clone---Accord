@@ -2,6 +2,8 @@ import React from "react";
 import "../Styles/NavUserInfo.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import StatusChangeBox from "./StatusChangeBox";
+import axios from "axios";
 
 function NavUserInfo(props) {
   const users = useSelector((state) => state.fetchUsersReducer.usersArray);
@@ -10,6 +12,17 @@ function NavUserInfo(props) {
   const [image, setImage] = useState("");
   //const [activity, setActivity] = useState('');
   const [username, setUsername] = useState("");
+
+  const [render, setRender] = useState(false);
+
+  const [status, setStatus] = useState("online");
+
+  const handleChange = (statusChange) => {
+    setRender(!render);
+    setStatus(statusChange);
+
+    //TODO: api call to DB to change user's status
+  };
 
   let currentUser = {};
 
@@ -22,11 +35,8 @@ function NavUserInfo(props) {
   };
 
   useEffect(() => {
-    console.log(users);
-    console.log(currentUsername);
     currentUser = returnCurrentUser(users);
-    console.log("Current User Object");
-    console.log(currentUser);
+
     if (currentUser) {
       setImage(currentUser.image);
       setUsername(currentUser.username);
@@ -42,7 +52,20 @@ function NavUserInfo(props) {
           backgroundImage: `url(${image})`,
         }}
       >
-        <div className="UserStatusIcon"></div>
+        <div
+          className={`UserStatusIcon-${
+            status === "online"
+              ? "online"
+              : status === "busy"
+              ? "busy"
+              : status === "offline"
+              ? "offline"
+              : ""
+          }`}
+          onClick={() => setRender(!render)}
+        >
+          {render && <StatusChangeBox handleChange={handleChange} />}
+        </div>
       </div>
       <div className="UserInfo">
         <div className="Username">{username}</div>

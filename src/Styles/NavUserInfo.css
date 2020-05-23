@@ -9,12 +9,36 @@
   position: relative;
 }
 
-.UserStatusIcon {
+.UserStatusIcon-online {
   border: 1px solid black;
   border-radius: 50%;
   height: 2vh;
   width: 2vh;
   background-color: greenyellow;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.UserStatusIcon-busy {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  background-color: rgb(255, 234, 47);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.UserStatusIcon-offline {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  background-color: rgb(59, 59, 59);
 
   position: absolute;
   bottom: 0;

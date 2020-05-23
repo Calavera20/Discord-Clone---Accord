@@ -6,6 +6,8 @@ import "./Styles/App.css";
 import Login from "./Components/Login";
 import AuthenticationPage from "./Components/AuthenticationPage";
 import Register from "./Components/Register";
+import About from "./Components/About";
+import UserSettings from "./Components/UserSettings";
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
             <AuthenticationPage>
               <Register />
             </AuthenticationPage>
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/settings">
+            <UserSettings />
           </Route>
         </Switch>
       </div>

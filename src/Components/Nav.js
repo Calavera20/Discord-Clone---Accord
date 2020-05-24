@@ -13,10 +13,11 @@ function Nav(props) {
         <NavUserInfo currentUser={props.currentUser} />
       </Col>
       <Col className="Nav_Logo text-center" xs={4}>
+        <span class="Nav_Logo__helper"></span>
         <NavLogo />
       </Col>
       <Col className="Nav_Menu" xs={4}>
-        <NavDropdownMenu />
+        <NavDropdownMenu currentComponent={props.currentComponent} />
       </Col>
     </Row>
   );

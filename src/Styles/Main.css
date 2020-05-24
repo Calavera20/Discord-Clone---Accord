@@ -1,5 +1,8 @@
 .Main_Content_Row {
-  height: 92vh;
+  height: 92%;
 
-  background-color: rgb(35, 25, 44);
+  background-image: url("../backgroundMain2.jpg");
+}
+.Main {
+  height: 100%;
 }

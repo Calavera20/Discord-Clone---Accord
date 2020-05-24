@@ -1,6 +1,6 @@
 .Nav {
   color: #f7f0f5;
-  height: 8vh;
+  max-height: 8%;
 
   background-color: rgb(26, 0, 41);
 }
@@ -11,8 +11,14 @@
 
 .Nav_Row {
   color: #f7f0f5;
-  height: 8vh;
+  max-height: 8%;
 
   background-color: #32292f;
   box-shadow: 0px 3px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.Nav_Logo__helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }

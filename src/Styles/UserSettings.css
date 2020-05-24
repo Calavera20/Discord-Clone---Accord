@@ -1,18 +1,37 @@
-.Content_Column {
-  height: 100vh;
-  background-color: burlywood;
+.Settings_Container {
+  height: 100%;
+  background-color: blanchedalmond;
 }
 
-.Content_Logo {
-  padding-top: 8vh;
-  height: 28vh;
+.Settings_Row {
+  height: 100%;
 }
-.Content_About {
-  height: 60vh;
+
+.Settings_Form_Container {
+  padding-top: 3%;
+  height: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
-.Content_Contact {
-  height: 12vh;
-  padding-bottom: 5vh;
+.Settings_Form_Container h1 {
+  text-align: center;
+  padding-bottom: 3%;
+}
+.Settings_Form_Container input {
+  margin-bottom: 3%;
+
+  width: 100%;
+  display: block;
+}
+.Settings_Form_Container canvas {
+  margin-bottom: 3%;
+
+  margin-left: 3%;
+}
+.Settings_Form_Container label {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .Image_Preview {

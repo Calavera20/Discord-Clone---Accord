@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Nav from "./Nav";
 import ServerList from "./ServerList";
 import UserList from "./UserList";
 import Chat from "./Chat";
+import About from "./About";
 import "../Styles/Main.css";
 import { fetchUsers } from "../Redux/Actions/index";
 import { useEffect } from "react";
 import { connect, useSelector } from "react-redux";
+import UserSettings from "./UserSettings";
 
 function Main(props) {
   const users = useSelector((state) => state.fetchUsersReducer.usersArray);
   const currentUsername = useSelector((state) => state.loginStatus.username);
+
+  const [currentComponent, setCurrentComponent] = useState("Main");
+
+  const handleComponentSwap = (option) => {
+    switch (option) {
+      case "About":
+        setCurrentComponent("About");
+        break;
+      case "Settings":
+        setCurrentComponent("Settings");
+        break;
+
+      case "Main":
+        setCurrentComponent("Main");
+        break;
+
+      default:
+        setCurrentComponent("Main");
+    }
+  };
 
   let currentUser = {};
 
@@ -34,14 +56,24 @@ function Main(props) {
 
   return (
     <Container className="Main" fluid>
-      <Nav currentUser={currentUser} />
+      <Nav currentComponent={handleComponentSwap} currentUser={currentUser} />
 
       <Row className="Main_Content_Row">
-        <ServerList />
+        {currentComponent == "Settings" && (
+          <UserSettings handleSwap={handleComponentSwap} />
+        )}
 
-        <Chat />
+        {currentComponent == "About" && (
+          <About handleSwap={handleComponentSwap} />
+        )}
 
-        <UserList allUsers={users} />
+        {currentComponent == "Main" && [
+          <ServerList />,
+
+          <Chat />,
+
+          <UserList allUsers={users} />,
+        ]}
       </Row>
     </Container>
   );

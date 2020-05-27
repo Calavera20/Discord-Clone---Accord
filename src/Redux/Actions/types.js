@@ -5,3 +5,6 @@ export const LOGIN_IN_PROGRESS = "LOGIN_IN_PROGRESS";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 export const FETCH_IN_PROGRESS = "FETCH_IN_PROGRESS";
+
+export const DISPLAY_FORM = "DISPLAY_FORM";
+export const HIDE_FORM = "HIDE_FORM";

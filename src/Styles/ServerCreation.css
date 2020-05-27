@@ -1,6 +1,27 @@
 .Servers_Creation {
+  border-radius: 10px;
   width: 90%;
   margin: 5%;
-  height: 8vh;
+  height: 4%;
   background-color: greenyellow;
+}
+
+.Server_Add_Button {
+  position: relative;
+  top: 10%;
+  height: 80%;
+  width: 54%;
+  background-color: blanchedalmond;
+  float: left;
+  margin-left: 4%;
+}
+
+.Server_Creation_Text {
+  position: relative;
+  top: 10%;
+  height: 80%;
+  width: 40%;
+  background-color: blueviolet;
+  margin-left: 2%;
+  float: left;
 }

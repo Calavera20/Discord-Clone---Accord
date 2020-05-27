@@ -5,6 +5,8 @@ import {
   FETCH_FAILURE,
   FETCH_IN_PROGRESS,
   FETCH_SUCCESS,
+  DISPLAY_FORM,
+  HIDE_FORM,
 } from "./types";
 
 import axios from "axios";
@@ -85,5 +87,16 @@ export const fetchUsersFailed = (error) => {
   return {
     type: FETCH_FAILURE,
     payload: { error },
+  };
+};
+
+export const displayServerForm = () => {
+  return {
+    type: DISPLAY_FORM,
+  };
+};
+export const hideServerForm = () => {
+  return {
+    type: HIDE_FORM,
   };
 };

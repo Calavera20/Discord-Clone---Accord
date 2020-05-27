@@ -10,10 +10,12 @@ import { fetchUsers } from "../Redux/Actions/index";
 import { useEffect } from "react";
 import { connect, useSelector } from "react-redux";
 import UserSettings from "./UserSettings";
+import ServerCreationForm from "./ServerCreationForm";
 
 function Main(props) {
   const users = useSelector((state) => state.fetchUsersReducer.usersArray);
   const currentUsername = useSelector((state) => state.loginStatus.username);
+  const serverCreationDisplay = useSelector((state) => state.displayServerForm);
 
   const [currentComponent, setCurrentComponent] = useState("Main");
 
@@ -22,6 +24,7 @@ function Main(props) {
       case "About":
         setCurrentComponent("About");
         break;
+
       case "Settings":
         setCurrentComponent("Settings");
         break;
@@ -56,6 +59,7 @@ function Main(props) {
 
   return (
     <Container className="Main" fluid>
+      {serverCreationDisplay && <ServerCreationForm />}
       <Nav currentComponent={handleComponentSwap} currentUser={currentUser} />
 
       <Row className="Main_Content_Row">
